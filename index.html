@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Demo</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+            <h1><span ng-click="jquery = ! jquery">jQuery? ... <span ng-show="jquery">nope!</span></span></h1>
+            <div>
+                <h2>show / hide an element</h2>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button class="btn btn-primary" ng-click="showHideSomething = ! showHideSomething">
+                            show image:
+                            <span ng-show="showHideSomething">1</span>
+                            <span ng-hide="showHideSomething">2</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-8">
+                        <div ng-show="showHideSomething"><img src="assets/images/img-01.png" /></div>
+                        <div ng-hide="showHideSomething"><img src="assets/images/img-02.png" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-2"
+             ng-init="beers = [
+                                            {country:'Czech Republic', lpy:148.6},
+                                            {country:'Austria', lpy:107.8},
+                                            {country:'Germany', lpy:106.1},
+                                            {country:'Estonia', lpy:102.4},
+                                            {country:'Poland', lpy:98.5},
+                                            {country:'Ireland', lpy:98.3},
+                                            {country:'Croatia', lpy:85.9},
+                                            {country:'Venezuela', lpy:85.5},
+                                            {country:'Finland', lpy:84.2},
+                                            {country:'Romania', lpy:83.2},
+                                            {country:'Australia', lpy:83.1},
+                                            {country:'Panama', lpy:82.3},
+                                            {country:'Slovenia', lpy:80.1},
+                                            {country:'United States', lpy:77.1},
+                                            {country:'Bulgaria', lpy:76.8},
+                                            {country:'Netherlands', lpy:75.7},
+                                            {country:'Russia', lpy:74.1},
+                                            {country:'Belgium', lpy:74},
+                                            {country:'Lithuania', lpy:72.5},
+                                            {country:'Hungary', lpy:71.3},
+                                            {country:'Slovakia', lpy:70.3},
+                                            {country:'United Kingdom', lpy:68.5},
+                                            {country:'Spain', lpy:68.4},
+                                            {country:'Brazil', lpy:68.3},
+                                            {country:'Canada', lpy:66.9},
+                                            {country:'Latvia', lpy:66.2},
+                                            {country:'New Zealand', lpy:64.7}
+                                        ]">
+            <h2>Top {{beers.length}} beer consuming countries for 2012</h2>
+
+            <ul>
+                <li ng-repeat="consumption in beers | filter : country">
+                    <span ng-class-odd="'odd'" ng-class-even="'even'" ng-class="{last: $last}">{{consumption.country}} - {{consumption.lpy}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+</div>
+<script src="assets/lib/angular.min.js"></script>
+</body>
+</html>

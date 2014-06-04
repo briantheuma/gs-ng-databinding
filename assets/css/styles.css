@@ -1,0 +1,60 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position:relative;
+    min-height:100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom:150px;
+}
+.header-left-slant{
+    position:absolute;
+    top:0;
+    left:0;
+    height:300px;
+    width:200px;
+    background:url('../images/left-corner.png') top left no-repeat;
+}
+
+.btn{
+    min-width: 200px;
+}
+
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+li{
+    padding:0;
+    margin:0;
+    width:300px;
+}
+
+.odd,.even{
+    width:200px;
+    display:block;
+    padding:5px 10px;
+}
+
+.odd{
+    background:#dddddd;
+}
+.even{
+    background:#eeeeee;
+}
+
+.last-class{
+    border-bottom:3px solid #777777;
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    /* Set the fixed height of the footer here */
+    height:150px;
+}
+
